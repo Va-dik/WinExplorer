@@ -65,7 +65,7 @@ namespace WinExplorer {
 
 	private: System::Windows::Forms::ToolStripMenuItem^ RenameToolStripMenuItem;
 
-	private: System::Windows::Forms::TextBox^ searchByMask;
+
 	private: System::Windows::Forms::TextBox^ pathTextBox;
 	private: System::Windows::Forms::ListView^ ContentListView;
 	private: System::Windows::Forms::ColumnHeader^ columnHeader1;
@@ -108,7 +108,6 @@ namespace WinExplorer {
 			this->âûõîäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->îÏðîãðàììåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->BackButton = (gcnew System::Windows::Forms::Button());
-			this->searchByMask = (gcnew System::Windows::Forms::TextBox());
 			this->pathTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->ContentListView = (gcnew System::Windows::Forms::ListView());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
@@ -247,14 +246,6 @@ namespace WinExplorer {
 			this->BackButton->UseVisualStyleBackColor = false;
 			this->BackButton->Click += gcnew System::EventHandler(this, &ExplorerForm::BackButton_Click);
 			// 
-			// searchByMask
-			// 
-			this->searchByMask->Location = System::Drawing::Point(779, 27);
-			this->searchByMask->Multiline = true;
-			this->searchByMask->Name = L"searchByMask";
-			this->searchByMask->Size = System::Drawing::Size(268, 28);
-			this->searchByMask->TabIndex = 5;
-			// 
 			// pathTextBox
 			// 
 			this->pathTextBox->Location = System::Drawing::Point(226, 27);
@@ -328,7 +319,6 @@ namespace WinExplorer {
 			this->directoriesTreeView->TabIndex = 3;
 			this->directoriesTreeView->BeforeExpand += gcnew System::Windows::Forms::TreeViewCancelEventHandler(this, &ExplorerForm::directoriesTreeView_BeforeExpand);
 			this->directoriesTreeView->AfterSelect += gcnew System::Windows::Forms::TreeViewEventHandler(this, &ExplorerForm::directoriesTreeView_AfterSelect);
-
 			// 
 			// splitContainer1
 			// 
@@ -371,7 +361,6 @@ namespace WinExplorer {
 			this->Controls->Add(this->splitContainer1);
 			this->Controls->Add(this->pathTextBox);
 			this->Controls->Add(this->menuStrip);
-			this->Controls->Add(this->searchByMask);
 			this->DoubleBuffered = true;
 			this->MainMenuStrip = this->menuStrip;
 			this->Name = L"ExplorerForm";

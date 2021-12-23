@@ -6,7 +6,6 @@ System::Void WinExplorer::ExplorerForm::óäàëèòüToolStripMenuItem_Click(System::O
 	{
 		NameList = ContentListView->SelectedItems[0]->Text;
 		Delete = true;
-		searchByMask->Text = NameList;
 	}
 	else
 	{
