@@ -1,6 +1,6 @@
 #include "ExplorerForm.h"
 
-System::Void WinExplorer::ExplorerForm::óäàëèòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void WinExplorer::ExplorerForm::DeleteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (ContentListView->SelectedItems->Count != 0)
 	{

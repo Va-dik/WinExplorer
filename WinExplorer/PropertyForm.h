@@ -94,6 +94,7 @@ namespace WinExplorer {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PropertyForm::typeid));
 			this->fileNameLabel = (gcnew System::Windows::Forms::Label());
 			this->fileLocationLabel = (gcnew System::Windows::Forms::Label());
 			this->fileSizeLabel = (gcnew System::Windows::Forms::Label());
@@ -277,6 +278,7 @@ namespace WinExplorer {
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->fileNameLabel);
 			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"PropertyForm";
 			this->ShowIcon = false;

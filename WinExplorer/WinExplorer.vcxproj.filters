@@ -66,12 +66,18 @@
     <ClCompile Include="BackButton.cpp">
       <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
     </ClCompile>
+    <ClCompile Include="AboutProgramForm.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExplorerForm.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
     <ClInclude Include="PropertyForm.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutProgramForm.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
   </ItemGroup>

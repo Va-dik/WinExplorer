@@ -1,8 +1,6 @@
 #include "ExplorerForm.h"
-#include "PropertyForm.h"
-
+#include "AboutProgramForm.h"
 #include <Windows.h>
-#include <string>
 
 using namespace System::IO;
 using namespace System::Collections::Generic;
@@ -36,6 +34,12 @@ unsigned long long WinExplorer::ExplorerForm::DirSize(DirectoryInfo^ directory)
 	}
 
 	return(Size);
+}
+
+System::Void WinExplorer::ExplorerForm::AboutProgramToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	AboutProgramForm^ aboutProgram = gcnew AboutProgramForm();
+	aboutProgram->Show();
 }
 
 System::Void WinExplorer::ExplorerForm::buttonUpdate_Click(System::Object^ sender, System::EventArgs^ e)
@@ -81,6 +85,3 @@ System::Void WinExplorer::ExplorerForm::ExplorerForm_Load(System::Object^ sender
 	this->ContentListView->SmallImageList->ImageSize = Drawing::Size(20, 20);
 	this->ContentListView->LargeImageList->ImageSize = Drawing::Size(40, 40);
 }
-
-
-

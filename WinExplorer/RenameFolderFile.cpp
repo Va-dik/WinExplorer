@@ -1,6 +1,6 @@
 #include "ExplorerForm.h"
 
-System::Void WinExplorer::ExplorerForm::ïåğåèìåíîâàòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void WinExplorer::ExplorerForm::RenameToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (ContentListView->SelectedItems->Count != 0)
 	{

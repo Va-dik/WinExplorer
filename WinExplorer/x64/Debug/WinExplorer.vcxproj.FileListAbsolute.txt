@@ -8,3 +8,4 @@ D:\WinExplorer\WinExplorer\x64\Debug\WinExplorer.vcxproj.SuggestedBindingRedirec
 D:\WinExplorer\WinExplorer\x64\Debug\WinExplorer.ExplorerForm.resources
 D:\WinExplorer\WinExplorer\x64\Debug\WinExplorer.PropertyForm.resources
 D:\WinExplorer\WinExplorer\x64\Debug\WinExplorer.vcxproj.GenerateResource.cache
+D:\WinExplorer\WinExplorer\x64\Debug\WinExplorer.AboutProgramForm.resources

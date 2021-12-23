@@ -119,6 +119,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AboutProgramForm.cpp" />
     <ClCompile Include="AfterSelect.cpp" />
     <ClCompile Include="BackButton.cpp" />
     <ClCompile Include="ChangeView.cpp" />
@@ -136,6 +137,9 @@
     <ClCompile Include="TreeViewInit.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AboutProgramForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ExplorerForm.h">
       <FileType>CppForm</FileType>
       <DeploymentContent>false</DeploymentContent>
@@ -145,6 +149,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AboutProgramForm.resx">
+      <DependentUpon>AboutProgramForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExplorerForm.resx">
       <DependentUpon>ExplorerForm.h</DependentUpon>
     </EmbeddedResource>

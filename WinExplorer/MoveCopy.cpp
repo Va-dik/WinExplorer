@@ -38,7 +38,7 @@ void WinExplorer::ExplorerForm::MoveDirectory(String^ strSourceDir, String^ strD
 	}
 }
 
-System::Void WinExplorer::ExplorerForm::êîïèğîâàòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void WinExplorer::ExplorerForm::CopyToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	sourcePath = filePath;
 }

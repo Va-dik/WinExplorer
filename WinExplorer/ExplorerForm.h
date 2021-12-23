@@ -25,11 +25,6 @@ namespace WinExplorer {
 			Type^ type = ContentListView->GetType();
 			System::Reflection::PropertyInfo^ propertyInfo = type->GetProperty("DoubleBuffered", System::Reflection::BindingFlags::NonPublic | System::Reflection::BindingFlags::Instance);
 			propertyInfo->SetValue(ContentListView, true, nullptr);
-
-			
-			//
-			//TODO: ‰Ó·‡‚¸ÚÂ ÍÓ‰ ÍÓÌÒÚÛÍÚÓ‡
-			//
 		}
 
 	protected:
@@ -73,11 +68,20 @@ namespace WinExplorer {
 	private: System::Windows::Forms::ColumnHeader^ columnHeader3;
 	private: System::Windows::Forms::Button^ buttonUpdate;
 	private: System::Windows::Forms::TreeView^ directoriesTreeView;
-	private: System::Windows::Forms::SplitContainer^ splitContainer1;
+	private: System::Windows::Forms::SplitContainer^ splitContainer;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::ToolStripMenuItem^ CreateToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ CreateFolderToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ CreateTextFIleToolStripMenuItem;
 	private: System::Windows::Forms::Button^ changeViewButton;
+	private: System::Windows::Forms::Panel^ panel1;
+
 
 	private: System::ComponentModel::IContainer^ components;
 	private:
@@ -115,14 +119,16 @@ namespace WinExplorer {
 			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->buttonUpdate = (gcnew System::Windows::Forms::Button());
 			this->directoriesTreeView = (gcnew System::Windows::Forms::TreeView());
-			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
+			this->splitContainer = (gcnew System::Windows::Forms::SplitContainer());
 			this->changeViewButton = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->extraContextMenuStrip->SuspendLayout();
 			this->menuStrip->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
-			this->splitContainer1->Panel1->SuspendLayout();
-			this->splitContainer1->Panel2->SuspendLayout();
-			this->splitContainer1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer))->BeginInit();
+			this->splitContainer->Panel1->SuspendLayout();
+			this->splitContainer->Panel2->SuspendLayout();
+			this->splitContainer->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// extraContextMenuStrip
@@ -171,7 +177,7 @@ namespace WinExplorer {
 			this->CopyToolStripMenuItem->Name = L"CopyToolStripMenuItem";
 			this->CopyToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->CopyToolStripMenuItem->Text = L" ÓÔËÓ‚‡Ú¸";
-			this->CopyToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::ÍÓÔËÓ‚‡Ú¸ToolStripMenuItem_Click);
+			this->CopyToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::CopyToolStripMenuItem_Click);
 			// 
 			// PasteToolStripMenuItem
 			// 
@@ -185,21 +191,21 @@ namespace WinExplorer {
 			this->DeleteToolStripMenuItem->Name = L"DeleteToolStripMenuItem";
 			this->DeleteToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->DeleteToolStripMenuItem->Text = L"”‰‡ÎËÚ¸";
-			this->DeleteToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::Û‰‡ÎËÚ¸ToolStripMenuItem_Click);
+			this->DeleteToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::DeleteToolStripMenuItem_Click);
 			// 
 			// RenameToolStripMenuItem
 			// 
 			this->RenameToolStripMenuItem->Name = L"RenameToolStripMenuItem";
 			this->RenameToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->RenameToolStripMenuItem->Text = L"œÂÂËÏÂÌÓ‚‡Ú¸";
-			this->RenameToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::ÔÂÂËÏÂÌÓ‚‡Ú¸ToolStripMenuItem_Click);
+			this->RenameToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::RenameToolStripMenuItem_Click);
 			// 
 			// PropertyToolStripMenuItem
 			// 
 			this->PropertyToolStripMenuItem->Name = L"PropertyToolStripMenuItem";
 			this->PropertyToolStripMenuItem->Size = System::Drawing::Size(161, 22);
 			this->PropertyToolStripMenuItem->Text = L"—‚ÓÈÒÚ‚‡";
-			this->PropertyToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::Ò‚ÓÈÒÚ‚‡ToolStripMenuItem_Click);
+			this->PropertyToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::PropertyToolStripMenuItem_Click);
 			// 
 			// menuStrip
 			// 
@@ -223,14 +229,16 @@ namespace WinExplorer {
 			// ‚˚ıÓ‰ToolStripMenuItem
 			// 
 			this->‚˚ıÓ‰ToolStripMenuItem->Name = L"‚˚ıÓ‰ToolStripMenuItem";
-			this->‚˚ıÓ‰ToolStripMenuItem->Size = System::Drawing::Size(149, 22);
+			this->‚˚ıÓ‰ToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->‚˚ıÓ‰ToolStripMenuItem->Text = L"«‡Í˚Ú¸";
+			this->‚˚ıÓ‰ToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::CloseToolStripMenuItem_Click);
 			// 
 			// ÓœÓ„‡ÏÏÂToolStripMenuItem
 			// 
 			this->ÓœÓ„‡ÏÏÂToolStripMenuItem->Name = L"ÓœÓ„‡ÏÏÂToolStripMenuItem";
-			this->ÓœÓ„‡ÏÏÂToolStripMenuItem->Size = System::Drawing::Size(149, 22);
+			this->ÓœÓ„‡ÏÏÂToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->ÓœÓ„‡ÏÏÂToolStripMenuItem->Text = L"Œ ÔÓ„‡ÏÏÂ";
+			this->ÓœÓ„‡ÏÏÂToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::AboutProgramToolStripMenuItem_Click);
 			// 
 			// BackButton
 			// 
@@ -239,7 +247,7 @@ namespace WinExplorer {
 			this->BackButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->BackButton->FlatAppearance->BorderSize = 0;
 			this->BackButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->BackButton->Location = System::Drawing::Point(0, 32);
+			this->BackButton->Location = System::Drawing::Point(3, 3);
 			this->BackButton->Name = L"BackButton";
 			this->BackButton->Size = System::Drawing::Size(46, 25);
 			this->BackButton->TabIndex = 0;
@@ -248,7 +256,7 @@ namespace WinExplorer {
 			// 
 			// pathTextBox
 			// 
-			this->pathTextBox->Location = System::Drawing::Point(226, 27);
+			this->pathTextBox->Location = System::Drawing::Point(226, 3);
 			this->pathTextBox->Multiline = true;
 			this->pathTextBox->Name = L"pathTextBox";
 			this->pathTextBox->Size = System::Drawing::Size(449, 28);
@@ -258,6 +266,7 @@ namespace WinExplorer {
 			// 
 			this->ContentListView->Activation = System::Windows::Forms::ItemActivation::OneClick;
 			this->ContentListView->AllowDrop = true;
+			this->ContentListView->BackColor = System::Drawing::SystemColors::Info;
 			this->ContentListView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(3) {
 				this->columnHeader1,
 					this->columnHeader2, this->columnHeader3
@@ -265,6 +274,7 @@ namespace WinExplorer {
 			this->ContentListView->ContextMenuStrip = this->extraContextMenuStrip;
 			this->ContentListView->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->ContentListView->HideSelection = false;
+			this->ContentListView->HoverSelection = true;
 			this->ContentListView->LabelEdit = true;
 			this->ContentListView->Location = System::Drawing::Point(0, 0);
 			this->ContentListView->Name = L"ContentListView";
@@ -301,7 +311,7 @@ namespace WinExplorer {
 			this->buttonUpdate->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->buttonUpdate->FlatAppearance->BorderSize = 0;
 			this->buttonUpdate->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonUpdate->Location = System::Drawing::Point(681, 27);
+			this->buttonUpdate->Location = System::Drawing::Point(681, 3);
 			this->buttonUpdate->Name = L"buttonUpdate";
 			this->buttonUpdate->Size = System::Drawing::Size(34, 28);
 			this->buttonUpdate->TabIndex = 2;
@@ -320,22 +330,24 @@ namespace WinExplorer {
 			this->directoriesTreeView->BeforeExpand += gcnew System::Windows::Forms::TreeViewCancelEventHandler(this, &ExplorerForm::directoriesTreeView_BeforeExpand);
 			this->directoriesTreeView->AfterSelect += gcnew System::Windows::Forms::TreeViewEventHandler(this, &ExplorerForm::directoriesTreeView_AfterSelect);
 			// 
-			// splitContainer1
+			// splitContainer
 			// 
-			this->splitContainer1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->splitContainer1->Location = System::Drawing::Point(0, 61);
-			this->splitContainer1->Name = L"splitContainer1";
+			this->splitContainer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->splitContainer->Location = System::Drawing::Point(0, 61);
+			this->splitContainer->Name = L"splitContainer";
 			// 
-			// splitContainer1.Panel1
+			// splitContainer.Panel1
 			// 
-			this->splitContainer1->Panel1->Controls->Add(this->directoriesTreeView);
+			this->splitContainer->Panel1->Controls->Add(this->directoriesTreeView);
 			// 
-			// splitContainer1.Panel2
+			// splitContainer.Panel2
 			// 
-			this->splitContainer1->Panel2->Controls->Add(this->ContentListView);
-			this->splitContainer1->Size = System::Drawing::Size(1125, 653);
-			this->splitContainer1->SplitterDistance = 222;
-			this->splitContainer1->TabIndex = 0;
+			this->splitContainer->Panel2->Controls->Add(this->ContentListView);
+			this->splitContainer->Size = System::Drawing::Size(1125, 653);
+			this->splitContainer->SplitterDistance = 222;
+			this->splitContainer->TabIndex = 0;
 			// 
 			// changeViewButton
 			// 
@@ -343,36 +355,48 @@ namespace WinExplorer {
 			this->changeViewButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->changeViewButton->FlatAppearance->BorderSize = 0;
 			this->changeViewButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->changeViewButton->Location = System::Drawing::Point(166, 27);
+			this->changeViewButton->Location = System::Drawing::Point(168, 4);
 			this->changeViewButton->Name = L"changeViewButton";
 			this->changeViewButton->Size = System::Drawing::Size(54, 27);
 			this->changeViewButton->TabIndex = 6;
 			this->changeViewButton->UseVisualStyleBackColor = true;
 			this->changeViewButton->Click += gcnew System::EventHandler(this, &ExplorerForm::changeViewButton_Click);
 			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->buttonUpdate);
+			this->panel1->Controls->Add(this->pathTextBox);
+			this->panel1->Controls->Add(this->BackButton);
+			this->panel1->Controls->Add(this->changeViewButton);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel1->Location = System::Drawing::Point(0, 24);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1125, 36);
+			this->panel1->TabIndex = 8;
+			// 
 			// ExplorerForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1125, 714);
-			this->Controls->Add(this->changeViewButton);
-			this->Controls->Add(this->buttonUpdate);
-			this->Controls->Add(this->BackButton);
-			this->Controls->Add(this->splitContainer1);
-			this->Controls->Add(this->pathTextBox);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->splitContainer);
 			this->Controls->Add(this->menuStrip);
 			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip;
 			this->Name = L"ExplorerForm";
-			this->Text = L"WinExplorer";
+			this->Text = L"MSU-FM-AVD-2021";
 			this->Load += gcnew System::EventHandler(this, &ExplorerForm::ExplorerForm_Load);
 			this->extraContextMenuStrip->ResumeLayout(false);
 			this->menuStrip->ResumeLayout(false);
 			this->menuStrip->PerformLayout();
-			this->splitContainer1->Panel1->ResumeLayout(false);
-			this->splitContainer1->Panel2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
-			this->splitContainer1->ResumeLayout(false);
+			this->splitContainer->Panel1->ResumeLayout(false);
+			this->splitContainer->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer))->EndInit();
+			this->splitContainer->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -397,12 +421,12 @@ namespace WinExplorer {
 	private: System::Void ContentListView_DragEnter(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e);
 	private: System::Void ContentListView_DragDrop(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e);
 	private: System::Void OpenToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void Ò‚ÓÈÒÚ‚‡ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void ÍÓÔËÓ‚‡Ú¸ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void PropertyToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void CopyToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void PasteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void Û‰‡ÎËÚ¸ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void DeleteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ContentListView_ItemDrag(System::Object^ sender, System::Windows::Forms::ItemDragEventArgs^ e);
-	private: System::Void ÔÂÂËÏÂÌÓ‚‡Ú¸ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void RenameToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void BackButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ContentListView_AfterLabelEdit(System::Object^ sender, System::Windows::Forms::LabelEditEventArgs^ e);
 	private: System::Void CreateFolderToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
@@ -414,5 +438,8 @@ namespace WinExplorer {
 	void CopyDirectory(DirectoryInfo^ diSourceDir, DirectoryInfo^ diDestDir);
 	void MoveDirectory(String^ strSourceDir, String^ strDestDir, bool bDelSource);
 	unsigned long long DirSize(DirectoryInfo^ d);
+	private: System::Void AboutProgramToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void CloseToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

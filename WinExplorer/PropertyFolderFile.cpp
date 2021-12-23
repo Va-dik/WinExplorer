@@ -1,7 +1,7 @@
 #include "ExplorerForm.h"
 #include "PropertyForm.h"
 
-System::Void WinExplorer::ExplorerForm::свойстваToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void WinExplorer::ExplorerForm::PropertyToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	PropertyForm^ propertyBox = gcnew PropertyForm();
 
@@ -36,7 +36,7 @@ System::Void WinExplorer::ExplorerForm::свойстваToolStripMenuItem_Click(System::
 				propertyBox->dataFileCreationLabel->Text = dirs[i]->CreationTime.ToString();
 				propertyBox->dataFileOpenedLabel->Text = Directory::GetLastAccessTime(dirs[i]->ToString()).ToString();
 				propertyBox->dataFileChangedLabel->Text = Directory::GetLastWriteTime(dirs[i]->ToString()).ToString();
-				propertyBox->dataFileSizeLabel->Text = DirSize(dirs[i]).ToString();
+				propertyBox->dataFileSizeLabel->Text = DirSize(dirs[i]).ToString() + " байт (" + DirSize(dirs[i]) / 1024 + " кб)";
 				propertyBox->Text = "Свойства: " + dirs[i];
 
 			}
@@ -45,7 +45,7 @@ System::Void WinExplorer::ExplorerForm::свойстваToolStripMenuItem_Click(System::
 	}
 	catch (...)
 	{
-		MessageBox::Show("Не удалось открыть файл (папку).", "Ошибка");
+		MessageBox::Show("Не удалось получить свойства файла (папки).", "Ошибка");
 	}
 	
 }

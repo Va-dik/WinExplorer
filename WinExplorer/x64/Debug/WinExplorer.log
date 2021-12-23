@@ -1,19 +1,19 @@
 ﻿  AfterSelect.cpp
 D:\WinExplorer\WinExplorer\AfterSelect.cpp(47,61): warning C4244: аргумент: преобразование "__int64" в "double", возможна потеря данных
   BackButton.cpp
+  BeforeExpand.cpp
   ChangeView.cpp
+  ContentListView.cpp
   CreationFolderFile.cpp
   DeleteFolderFile.cpp
   DragDrop.cpp
   ExplorerForm.cpp
   MoveCopy.cpp
-  PropertyFolderFile.cpp
-  ContentListView.cpp
   OpenFolderFile.cpp
-  BeforeExpand.cpp
+  PropertyFolderFile.cpp
   RenameFolderFile.cpp
 D:\WinExplorer\WinExplorer\RenameFolderFile.cpp(37,22): warning C4129: /: неизвестная escape-последовательность
   TreeViewInit.cpp
   Создание кода...
-  AfterSelect.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  AboutProgramForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   WinExplorer.vcxproj -> D:\WinExplorer\x64\Debug\WinExplorer.exe
