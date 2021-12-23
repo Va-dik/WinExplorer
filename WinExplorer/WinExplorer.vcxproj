@@ -25,6 +25,7 @@
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>WinExplorer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>WinExplorer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -118,12 +119,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AfterSelect.cpp" />
+    <ClCompile Include="BackButton.cpp" />
+    <ClCompile Include="ChangeView.cpp" />
+    <ClCompile Include="CreationFolderFile.cpp" />
+    <ClCompile Include="DeleteFolderFile.cpp" />
+    <ClCompile Include="DragDrop.cpp" />
     <ClCompile Include="ExplorerForm.cpp" />
+    <ClCompile Include="MoveCopy.cpp" />
+    <ClCompile Include="PropertyFolderFile.cpp" />
     <ClCompile Include="PropertyForm.cpp" />
+    <ClCompile Include="ContentListView.cpp" />
+    <ClCompile Include="OpenFolderFile.cpp" />
+    <ClCompile Include="BeforeExpand.cpp" />
+    <ClCompile Include="RenameFolderFile.cpp" />
+    <ClCompile Include="TreeViewInit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExplorerForm.h">
       <FileType>CppForm</FileType>
+      <DeploymentContent>false</DeploymentContent>
     </ClInclude>
     <ClInclude Include="PropertyForm.h">
       <FileType>CppForm</FileType>
@@ -136,6 +151,9 @@
     <EmbeddedResource Include="PropertyForm.resx">
       <DependentUpon>PropertyForm.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

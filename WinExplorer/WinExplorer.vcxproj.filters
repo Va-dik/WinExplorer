@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы ресурсов\DirectoryTreeView_Config">
+      <UniqueIdentifier>{31d268ba-731f-4d39-bb4e-776e549f8e9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы ресурсов\ContentListView_Actions">
+      <UniqueIdentifier>{ae7e5adf-22f9-4557-a8fa-d2be24d09f8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExplorerForm.cpp">
@@ -20,6 +26,45 @@
     </ClCompile>
     <ClCompile Include="PropertyForm.cpp">
       <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeViewInit.cpp">
+      <Filter>Файлы ресурсов\DirectoryTreeView_Config</Filter>
+    </ClCompile>
+    <ClCompile Include="DragDrop.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveCopy.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenFolderFile.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertyFolderFile.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentListView.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AfterSelect.cpp">
+      <Filter>Файлы ресурсов\DirectoryTreeView_Config</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteFolderFile.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="BeforeExpand.cpp">
+      <Filter>Файлы ресурсов\DirectoryTreeView_Config</Filter>
+    </ClCompile>
+    <ClCompile Include="CreationFolderFile.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameFolderFile.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeView.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="BackButton.cpp">
+      <Filter>Файлы ресурсов\ContentListView_Actions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -29,5 +74,8 @@
     <ClInclude Include="PropertyForm.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
