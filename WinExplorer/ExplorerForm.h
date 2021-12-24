@@ -229,14 +229,14 @@ namespace WinExplorer {
 			// âûõîäToolStripMenuItem
 			// 
 			this->âûõîäToolStripMenuItem->Name = L"âûõîäToolStripMenuItem";
-			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(149, 22);
 			this->âûõîäToolStripMenuItem->Text = L"Çàêðûòü";
 			this->âûõîäToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::CloseToolStripMenuItem_Click);
 			// 
 			// îÏðîãðàììåToolStripMenuItem
 			// 
 			this->îÏðîãðàììåToolStripMenuItem->Name = L"îÏðîãðàììåToolStripMenuItem";
-			this->îÏðîãðàììåToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->îÏðîãðàììåToolStripMenuItem->Size = System::Drawing::Size(149, 22);
 			this->îÏðîãðàììåToolStripMenuItem->Text = L"Î ïðîãðàììå";
 			this->îÏðîãðàììåToolStripMenuItem->Click += gcnew System::EventHandler(this, &ExplorerForm::AboutProgramToolStripMenuItem_Click);
 			// 
@@ -278,7 +278,7 @@ namespace WinExplorer {
 			this->ContentListView->LabelEdit = true;
 			this->ContentListView->Location = System::Drawing::Point(0, 0);
 			this->ContentListView->Name = L"ContentListView";
-			this->ContentListView->Size = System::Drawing::Size(899, 653);
+			this->ContentListView->Size = System::Drawing::Size(900, 653);
 			this->ContentListView->TabIndex = 0;
 			this->ContentListView->UseCompatibleStateImageBehavior = false;
 			this->ContentListView->View = System::Windows::Forms::View::Details;
@@ -320,12 +320,11 @@ namespace WinExplorer {
 			// 
 			// directoriesTreeView
 			// 
-			this->directoriesTreeView->ContextMenuStrip = this->extraContextMenuStrip;
 			this->directoriesTreeView->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->directoriesTreeView->HotTracking = true;
 			this->directoriesTreeView->Location = System::Drawing::Point(0, 0);
 			this->directoriesTreeView->Name = L"directoriesTreeView";
-			this->directoriesTreeView->Size = System::Drawing::Size(222, 653);
+			this->directoriesTreeView->Size = System::Drawing::Size(221, 653);
 			this->directoriesTreeView->TabIndex = 3;
 			this->directoriesTreeView->BeforeExpand += gcnew System::Windows::Forms::TreeViewCancelEventHandler(this, &ExplorerForm::directoriesTreeView_BeforeExpand);
 			this->directoriesTreeView->AfterSelect += gcnew System::Windows::Forms::TreeViewEventHandler(this, &ExplorerForm::directoriesTreeView_AfterSelect);
@@ -346,7 +345,7 @@ namespace WinExplorer {
 			// 
 			this->splitContainer->Panel2->Controls->Add(this->ContentListView);
 			this->splitContainer->Size = System::Drawing::Size(1125, 653);
-			this->splitContainer->SplitterDistance = 222;
+			this->splitContainer->SplitterDistance = 221;
 			this->splitContainer->TabIndex = 0;
 			// 
 			// changeViewButton
@@ -439,7 +438,6 @@ namespace WinExplorer {
 	void MoveDirectory(String^ strSourceDir, String^ strDestDir, bool bDelSource);
 	unsigned long long DirSize(DirectoryInfo^ d);
 	private: System::Void AboutProgramToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void CloseToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void CloseToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

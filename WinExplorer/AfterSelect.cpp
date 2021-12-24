@@ -89,6 +89,6 @@ System::Void WinExplorer::ExplorerForm::directoriesTreeView_AfterSelect(System::
 	}
 
 	backPathList->Add(directoriesTreeView->SelectedNode);
-
+	]
 	ContentListView->AutoResizeColumns(ColumnHeaderAutoResizeStyle::HeaderSize);
 }

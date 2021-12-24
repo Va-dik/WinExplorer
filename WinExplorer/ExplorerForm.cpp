@@ -42,6 +42,11 @@ System::Void WinExplorer::ExplorerForm::AboutProgramToolStripMenuItem_Click(Syst
 	aboutProgram->Show();
 }
 
+System::Void WinExplorer::ExplorerForm::CloseToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	this->Close();
+}
+
 System::Void WinExplorer::ExplorerForm::buttonUpdate_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	try
