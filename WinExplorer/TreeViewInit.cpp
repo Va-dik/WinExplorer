@@ -32,6 +32,12 @@ void WinExplorer::ExplorerForm::DriveTreeInit()
 			directoriesTreeView->Nodes[i]->ImageIndex = 3;
 			directoriesTreeView->Nodes[i]->SelectedImageIndex = 3;
 		}
+
+		if (drives[i]->DriveType == DriveType::CDRom)
+		{
+			directoriesTreeView->Nodes[i]->ImageIndex = 4;
+			directoriesTreeView->Nodes[i]->SelectedImageIndex = 4;
+		}
 	}
 
 	directoriesTreeView->EndUpdate();

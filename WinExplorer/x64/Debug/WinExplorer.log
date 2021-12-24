@@ -1,4 +1,6 @@
 ﻿  AfterSelect.cpp
-D:\WinExplorer\WinExplorer\AfterSelect.cpp(47,61): warning C4244: аргумент: преобразование "__int64" в "double", возможна потеря данных
+D:\WinExplorer\WinExplorer\AfterSelect.cpp(56,61): warning C4244: аргумент: преобразование "__int64" в "double", возможна потеря данных
+  TreeViewInit.cpp
+  Создание кода...
   AboutProgramForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   WinExplorer.vcxproj -> D:\WinExplorer\x64\Debug\WinExplorer.exe

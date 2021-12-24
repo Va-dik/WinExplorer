@@ -79,7 +79,7 @@ System::Void WinExplorer::ExplorerForm::ExplorerForm_Load(System::Object^ sender
 	iconList->Images->Add(Bitmap::FromFile(Application::StartupPath + "\\Icons\\0_closed_Folder.png"));
 	iconList->Images->Add(Bitmap::FromFile(Application::StartupPath + "\\Icons\\1_opened_Folder.png"));
 	iconList->Images->Add(Bitmap::FromFile(Application::StartupPath + "\\Icons\\usb_Icon.png"));
-
+	iconList->Images->Add(Bitmap::FromFile(Application::StartupPath + "\\Icons\\cd_icon.png"));
 	//Инициализируем 
 	DriveTreeInit();
 

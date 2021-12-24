@@ -6,6 +6,7 @@
 System::Void WinExplorer::ExplorerForm::directoriesTreeView_BeforeExpand(System::Object^ sender, System::Windows::Forms::TreeViewCancelEventArgs^ e)
 {	// Если только 1 дочерний узел и у него пустое имя, то значит структура каталогов еще не была загружена
 	// и вызывается метод добавления узлов дерева, соответствующих подкаталогам
+
 	if (e->Node->Nodes->Count == 1 && e->Node->Nodes[0]->Text == "")
 	{
 		e->Node->Nodes->Clear();
